@@ -70,11 +70,28 @@
     /* Caption */
     .caption {
       text-align: center;
-      padding: 8px 16px;
-      font-size: 0.85rem;
-      color: #aaa;
+      padding: 10px 20px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #bbb;
       min-height: 2em;
+      max-height: 30vh;
+      overflow-y: auto;
       flex-shrink: 0;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .caption:empty::before {
+      content: "\00a0";
+    }
+
+    @media (max-width: 600px) {
+      .caption {
+        font-size: 0.85rem;
+        padding: 8px 14px;
+        max-height: 25vh;
+      }
     }
 
     /* Navigation arrows */
@@ -206,31 +223,32 @@
 
   <script>
     // Order matches original site navigation: index → A2 → A3 → ... → A11
+    // Captions preserved verbatim from original 2001 site (typos and all)
     const photos = [
       // Page 1 (index)
-      { src: "images/21L.jpg", caption: "" },
-      { src: "images/22L.jpg", caption: "" },
-      { src: "images/3vL.jpg", caption: "" },
-      { src: "images/57L.jpg", caption: "" },
-      { src: "images/19L.jpg", caption: "" },
-      { src: "images/17L.jpg", caption: "" },
+      { src: "images/21L.jpg", caption: "We left on June 29 at about noon. We didn't have a set plan, so up highway 287 we went. Jay and I were both excited to leave. Our eyes and minds were opened during the first 10 miles. Untill a spare tire fell off a trailer in front of us. The tire rolled into the other lane and hit a new ford truck. As we passed through the accident scene the tire flew passed on the right side at about 70 miles an hour. The realities of how vulnerable motorbikes are was setting in." },
+      { src: "images/22L.jpg", caption: "Ty received badly sunburned arms, what we call the biker tan. We camped somewhere in Wyoming under a rock listining to bear grunts. Three mountain kids questioned us \"you didn't bring a fishing pole or beer?\" Visited the world's largest mineral hot spring. Not so full service gas station next to a \"faux\" A&W. Through the Indian reservation. With ratty stray dogs and road kill everywhere. Ahh, Bozeman, Mt. Ale Works. Kristen Elena recognized me and she was rooming with Dana Olbright. They put us up for the night in their basement apartment complete with a ski binding toilet paper holder." },
+      { src: "images/3vL.jpg", caption: "Breakfast at the Cat Eyes Cafe, because the Feed was closed. The sign on the door read; Trash is extremely hard to pull out of the toilet. Little white crosses on the side of the road mark every fatal accident; needless to say we kept our eyes open. Brake fluid leak uncovered. We decided to take our watches off and feel time. Found nice camp spot under some power lines with nothing but, autos, trains, fireworks, planes, and gunshots to listen to. Feeling adventurous, we explored into some dense woods and found a bear/mountain lion lean to about twenty feet in the woods and about fifty feet from our campsite. That night we lit a big fire and left it burning." },
+      { src: "images/57L.jpg", caption: "Glacier National Park was unbelievable. Sonny Loubick's nephew was a park ranger. I didn't fit the requirements of the Canadian Border patrol. A&W for lunch. Flat tire slowed us down on our way to Calgary. Days Inn for $17 U.S. After four days and three nights on the road we were ready for a hotel and a night out on the town. Sushi of course. Jay ordered enough to kill a horse. Jay found he was always looking at the watch that wasn't there so he put it back on." },
+      { src: "images/19L.jpg", caption: "The world's largest ball of twine is drooping." },
+      { src: "images/17L.jpg", caption: "Emergency stop at Black Foot Motor sports ended five hours later with a $1.75 parts bill, and $90 in labor. Needless to say they were very cool guys. Past the Olympic center and rolled into Banff. Moose in the middle of town and another moose on a Harley that I joked about camping with." },
       // Page 2
       { src: "images/8vL.jpg", caption: "" },
-      { src: "images/15L.jpg", caption: "" },
-      { src: "images/56L.jpg", caption: "" },
-      { src: "images/54L.jpg", caption: "The Surefooted Swede." },
+      { src: "images/15L.jpg", caption: "The bluest water I've ever seen. We hiked up on a receding glacier. Very much what I think a moonwalk would be like. Next gas 90 miles, oops. Almost made it. Jasper subway. Friendly Canadians everywhere. Rain suits on for the first time, not thinking that I would live in mine the next two weeks. If you're ever in Prince George, never, I mean NEVER stay at the Hi-way Motel. Nothing was changed since the early sixties and it reeked of urine. I didn't even remove my clothes when I got in bed. We should have kicked the owner's ass for renting us that unit. I now ask to see the room before I rent. Our nature count was up this day; 4 bears, 2 moose, 1 elk, and 1 exploding tire. Up until now, I never experienced an 18-wheeler tire explosion but I always see the rubber on the side of the road." },
+      { src: "images/56L.jpg", caption: "Fat Pat the rig rat, AKA fatty two seats from the great white north is what they called him. He happened to roll into the same campsite and asked if there was any bikers. The ranger said yes and asked if he needed a campfire, Fat Pat replied, \"I'll just use theirs\". He was proud of his 2001 HD Road King." },
+      { src: "images/54L.jpg", caption: "\"The Surefooted Swede.\"" },
       { src: "images/23L.jpg", caption: "" },
-      { src: "images/55L.jpg", caption: "" },
+      { src: "images/55L.jpg", caption: "More rain. We found a grocery store. Three whole isles, 1 isle of chips, 1 isle of cereal bars, and a pet food isle. The common phrase becomes \"I just ate a bug\" $40 tank of gas. An old clear-cut loading area offered, 360-degree mountain view, no bears in sight, plethora of firewood and shelter from the elements. Absolute Hilton compared to the shit hole we stayed last night. Our new bored game was \"who could through the biggest stump on the fire\"." },
       // Page 3
       { src: "images/53L.jpg", caption: "Glacier National Peace Park." },
-      { src: "images/30L.jpg", caption: "" },
+      { src: "images/30L.jpg", caption: "Luke's birthday, I swear we didn't forget about it, we were just in the middle of nowhere! More rain all day. Jay thinks he saw a billboard for a brewery. I ask a local at the gas station for directions to downtown \"this is down town\" he replies. We are both delirious from being in the elements and could not stop laughing. People thought we were the crazy ones. We are both thinking constantly about hot tubs and warm climates. Didn't think it could get any worse. Jay crashes his bike on a rain slicked muddy road on our way to a mosquito infested campsite with very little, wet wood! The glassed Dease Lake and the little cloud break made it all worthwhile. I catch on to the ancient art of the \"hip ditch\"." },
       { src: "images/6vL.jpg", caption: "" },
       { src: "images/31L.jpg", caption: "Denali Highway." },
       { src: "images/17vL.jpg", caption: "" },
       { src: "images/25L.jpg", caption: "" },
       // Page 4
-      { src: "images/4vL.jpg", caption: "" },
-      { src: "images/18L.jpg", caption: "" },
+      { src: "images/4vL.jpg", caption: "Hot tubs, beaches, stoves, Hot cocoa, Starbucks, any thing warm to the touch would do. On to Whitehorse where the scum of the univers reside. Pizza. Chilkoot Motel." },
+      { src: "images/18L.jpg", caption: "Kluane National Wildlife Preserve." },
       { src: "images/11L.jpg", caption: "" },
       { src: "images/10L.jpg", caption: "" },
       { src: "images/24L.jpg", caption: "" },
@@ -239,51 +257,51 @@
       { src: "images/35L.jpg", caption: "" },
       { src: "images/18vL.jpg", caption: "Waterton Park." },
       { src: "images/20L.jpg", caption: "" },
-      { src: "images/8L.jpg", caption: "" },
+      { src: "images/8L.jpg", caption: "Shaman Lawrence was sent like an angel from heaven to help us change the oil for the first time. Not a usual angel, but one with a braided goatee. Why are there no floats at the A&W? Canadians. Klune game sanctuary in the Yukon. Alaska highway. Stunning. Perfect. Parking lot campsite." },
       { src: "images/20vL.jpg", caption: "" },
-      { src: "images/6L.jpg", caption: "" },
+      { src: "images/6L.jpg", caption: "Motorcycle rule #1: Always put your kickstand up before you ride away." },
       // Page 6
       { src: "images/12L.jpg", caption: "" },
-      { src: "images/4L.jpg", caption: "" },
-      { src: "images/16L.jpg", caption: "" },
-      { src: "images/33L.jpg", caption: "" },
-      { src: "images/37L.jpg", caption: "" },
+      { src: "images/4L.jpg", caption: "After we crossed through the Canadian border, I stopped and asked Jay if he paid at the last gas station. Nope. We flipped a bitch and headed back through the border. I felt really stupid explaining to the border patrol that it was an accident." },
+      { src: "images/16L.jpg", caption: "Moose sighting. As we crossed the Yellow head River there was an expresso stop $4, and country store where we bought fishing line, two cans of tuna and some crackers, $18. Fire wood for our Tangle lakes campsite along the Denali highway, $7. Jay catching his first 4\" fish, priceless. We thought we would be reeling in 40 lb fish with our homemade poles. We were wrong. About twenty miles into the tundra we passed a man who ran out of gas. He pulled a gas pump out of the back of his truck and filled up." },
+      { src: "images/33L.jpg", caption: "The Denali highway is all dirt for about 160 miles. Twisting through the tundra with huge mountains on either side of us. I felt like a peon compared to the size of everything. All of a sudden there was snow and it took about 100 feet for me to get my bike under control and before I slammed in to the back of Jay's bike. It was the close call of the day. We ate at a home cooking gas station. We traveled up into Denali national park to see mount McKinley. It didn't seem that big. I ran out of gas three times getting back out of the park. Jay wins the famous quote of the trip award, \"Be careful, the moose come out at 7:30\". We were miserable, cold, wet and tired. Poured all night long." },
+      { src: "images/37L.jpg", caption: "Crazy guy pulls us over to \"talk\". Anchorage. Kenai Spur Highway. Met Mike Callen at Skimmos and spent the night in an airplane hanger." },
       { src: "images/34L.jpg", caption: "" },
       // Page 7
-      { src: "images/39L.jpg", caption: "" },
-      { src: "images/40L.jpg", caption: "" },
-      { src: "images/38L.jpg", caption: "Fishing hip waders." },
+      { src: "images/39L.jpg", caption: "Still groggy, we board a sea plane and fly across the Cook Inlet. We are dropped onto a mass of floating vegetation. We boat to a red salmon spawning spot. Bears swim right up along the boat and dive after fish. Incredible! Lunch at the Greek palace, great pizza. We arrive in Seward to find out that every hotel/motel is full. We found a dormitory room at the holiday inn. Lobby was \"stuffed\" with dead animals. Cold showers are awesome." },
+      { src: "images/40L.jpg", caption: "The prominent oil industry in Alaska." },
+      { src: "images/38L.jpg", caption: "Fishing hip waiters." },
       { src: "images/36L.jpg", caption: "" },
-      { src: "images/13vL.jpg", caption: "Perfect Alaska fishing companion." },
+      { src: "images/13vL.jpg", caption: "Perfect Alaska fishing compainion." },
       { src: "images/27L.jpg", caption: "" },
       // Page 8
       { src: "images/12vL.jpg", caption: "" },
-      { src: "images/26L.jpg", caption: "" },
+      { src: "images/26L.jpg", caption: "We awake at 4:30am for ferry stand by. Luckily we made it on because the next one was in a month from now. Breaching whales, frolicking otters, floating ice burgs. 8:00pm we arrive in Valdez. Like a scene out of a James Bond movie. Very eerie." },
       { src: "images/32L.jpg", caption: "Alaska Marine Highway." },
       { src: "images/11vL.jpg", caption: "" },
       { src: "images/29L.jpg", caption: "" },
-      { src: "images/45L.jpg", caption: "" },
+      { src: "images/45L.jpg", caption: "We met Anna, a girl trying to find her way in life. Ketchikan cannery. Motel in Prince Rupert." },
       // Page 9
       { src: "images/9vL.jpg", caption: "Alaska wildlife." },
       { src: "images/10vL.jpg", caption: "" },
       { src: "images/44L.jpg", caption: "Spendin' the Gs." },
-      { src: "images/47L.jpg", caption: "" },
-      { src: "images/43L.jpg", caption: "" },
-      { src: "images/41L.jpg", caption: "" },
+      { src: "images/47L.jpg", caption: "Chess can be a major time consumer. We arrive in Juneau, the capital. Hundreds of bald eagles. Lunch at Bull winkles pizza, sucked I don't know why we even went there. Back on to the ferry where we went through a pod of whales, about a dozen or so. Blowing, slapping their fins on the water, and flipping their tails. Smiles for lunch, Cowpachino. Library in Prince Rupert has a thirty-minute limit on all computers. Man was touching the bikes while insisting that he was not touching them. Bears at our campsite. Needless to say, we moved. It's tough to start a fire with wet wood, especially when Jay keeps smothering it. At least we pick up some magazines to alleviate boredoms; they also work well as fire starters." },
+      { src: "images/43L.jpg", caption: "The hell ferry Departs at 7:00am. No chairs, snotty foreigners, very LOUD speakers, but beautiful views." },
+      { src: "images/41L.jpg", caption: "Friendly Vancouver Island police. Close call with bear. Mad dash for cash before the ferry left. Paid for dinner with a fist full of change. Grandma's house." },
       // Page 10
       { src: "images/42L.jpg", caption: "Puget Sound." },
       { src: "images/52L.jpg", caption: "Grandma's garage." },
       { src: "images/49L.jpg", caption: "" },
       { src: "images/14vL.jpg", caption: "" },
-      { src: "images/15vL.jpg", caption: "" },
+      { src: "images/15vL.jpg", caption: "Lunch with Gene at the fisherman's wharf. Went with Dave and Kerry to the original sound garden. Kites didn't fly. Dinner with David and Lulu. Tiki lounge shuffleboard." },
       { src: "images/46L.jpg", caption: "W7VY." },
       // Page 11
-      { src: "images/50L.jpg", caption: "" },
+      { src: "images/50L.jpg", caption: "Patrick Gogerty showing off his new bike." },
       { src: "images/48L.jpg", caption: "Dave and Kerry eating blackberries." },
-      { src: "images/16vL.jpg", caption: "Joel Stonington in Portland." },
-      { src: "images/51L.jpg", caption: "" },
+      { src: "images/16vL.jpg", caption: "Joel Stonigton in Portland." },
+      { src: "images/51L.jpg", caption: "Erin Mccord. Wonderful personalities don't always make the best drivers." },
       { src: "images/2L.jpg", caption: "Jen Hale in her bedroom." },
-      { src: "images/3L.jpg", caption: "" },
+      { src: "images/3L.jpg", caption: "Jusin and Cameron Zimmerman laughing in the face of fear." },
     ];
 
     let index = 0;
